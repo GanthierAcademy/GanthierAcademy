@@ -1,16 +1,5 @@
-const reveals = document.querySelectorAll('.reveal');
-
-function revealCheck(){
-  const trigger = window.innerHeight * 0.85;
-
-  reveals.forEach(el=>{
-    const top = el.getBoundingClientRect().top;
-
-    if(top < trigger){
-      el.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealCheck);
-window.addEventListener('load', revealCheck);
+document.querySelectorAll('.faq-item').forEach(item=>{
+item.querySelector('.faq-question').addEventListener('click',()=>{
+item.classList.toggle('active');
+});
+});
