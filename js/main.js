@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  const elements = document.querySelectorAll("section, .card, .grid-3 img");
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll("section, .card, img");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -8,13 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
         entry.target.classList.add("show");
       }
     });
-  }, {
-    threshold: 0.15
-  });
+  }, { threshold: 0.12 });
 
-  elements.forEach(el => {
+  items.forEach(el => {
     el.classList.add("hidden");
     observer.observe(el);
   });
-
 });
