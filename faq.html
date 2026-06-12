@@ -42,7 +42,7 @@ color:#dbe9ff;
 .accordion-content{
 max-height:0;
 overflow:hidden;
-transition:0.4s ease;
+transition:max-height 0.4s ease, padding 0.4s ease;
 padding:0 20px;
 color:#cfd8e8;
 }
@@ -51,6 +51,12 @@ color:#cfd8e8;
 padding:0 20px 18px;
 }
 
+.accordion.active .accordion-content{
+padding:0 20px 18px;
+}
+
+
+  
 </style>
 
 </head>
