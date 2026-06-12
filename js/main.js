@@ -1,15 +1,18 @@
-const reveals=document.querySelectorAll('.reveal');
+<script>
+document.querySelectorAll(".accordion").forEach(item => {
+  const header = item.querySelector(".accordion-header");
+  const content = item.querySelector(".accordion-content");
 
-window.addEventListener('scroll',()=>{
+  header.addEventListener("click", () => {
 
-reveals.forEach(el=>{
+    item.classList.toggle("active");
 
-const top=el.getBoundingClientRect().top;
+    if (item.classList.contains("active")) {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = null;
+    }
 
-if(top<window.innerHeight-100){
-el.classList.add('active');
-}
-
+  });
 });
-
-});
+</script>
