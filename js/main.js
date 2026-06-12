@@ -1,16 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll("section, .card, img");
+const reveals=document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.12 });
+window.addEventListener('scroll',()=>{
 
-  items.forEach(el => {
-    el.classList.add("hidden");
-    observer.observe(el);
-  });
+reveals.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+el.classList.add('active');
+}
+
+});
+
 });
