@@ -265,13 +265,3 @@ footer{
 }
 
 }
-
-.section,
-.card,
-.grid-2,
-.grid-3,
-.stats{
-opacity:1 !important;
-transform:none !important;
-display:block !important;
-}
